@@ -1,10 +1,13 @@
 import 'package:camera_deep_ar/camera_deep_ar.dart';
 import 'package:flutter/material.dart';
 
+//Get your API Key from https://www.deepar.ai/
 const apikey = "API KEY";
 
-void main(){
-  runApp(MyApp());
+void main() {
+  runApp(
+    MyApp(),
+  );
 }
 
 class MyApp extends StatefulWidget {
@@ -18,32 +21,25 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Stack(
           children: [
             CameraDeepAr(
               onCameraReady: (isReady) {
-                setState(() {
-
-                });
+                setState(() {});
               },
               onImageCaptured: (path) {
-                setState(() {
-
-                });
+                setState(() {});
               },
               onVideoRecorded: (path) {
-                setState(() {
-
-                });
+                setState(() {});
               },
               androidLicenceKey: apikey,
               iosLicenceKey: apikey,
               cameraDeepArCallback: (c) async {
                 cameraDeepArController = c;
-                setState(() {
-
-                });
+                setState(() {});
               },
             ),
             Align(
@@ -54,9 +50,10 @@ class _MyAppState extends State<MyApp> {
                   child: Icon(Icons.navigate_next),
                   onPressed: () => {
                     cameraDeepArController.changeMask(effectcount),
-                    if(effectcount==7){
-                      effectcount = 0,
-                    },
+                    if (effectcount == 7)
+                      {
+                        effectcount = 0,
+                      },
                     effectcount++,
                   },
                 ),
