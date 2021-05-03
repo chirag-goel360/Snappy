@@ -1,3 +1,4 @@
+Add your API key to main.dart
 # snappy
 
 A new Flutter project.
